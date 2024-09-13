@@ -1,0 +1,39 @@
+{
+  "name": "shanto-travel-songgi",
+  "description": "A full stack web application developed using nextjs, typescript, material-ui and redux-toolkit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "author": {
+    "name": "Mohammad Farhad",
+    "email": "mfarhad.dev@gmail.com",
+    "url": "https://mfarhad-dev.vercel.app"
+  },
+  "repository": "https://github.com/mfarhadattari/shanto-travel-songgi",
+  "dependencies": {
+    "@emotion/cache": "^11.13.1",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.0",
+    "@mui/material": "^6.1.0",
+    "@mui/material-nextjs": "^6.1.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "next": "14.2.10",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-redux": "^9.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.10",
+    "typescript": "^5"
+  }
+}
