@@ -1,17 +1,17 @@
-import config from "@/config";
-import { Box, Button } from "@mui/material";
+import config from '@/config';
+import { Box, Button } from '@mui/material';
 
-export default function Home() {
+export default async function Home() {
   return (
     <Box
       style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        textTransform: "uppercase",
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        textTransform: 'uppercase',
       }}
     >
       <h1>Welcome to {config.app_name}</h1>
