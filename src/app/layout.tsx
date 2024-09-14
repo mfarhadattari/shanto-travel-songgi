@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import Providers from '@/libs/providers/Providers';
+import type { Metadata } from "next";
+import "./globals.css";
+import Providers from "@/libs/providers/Providers";
 
 export const metadata: Metadata = {
-  title: 'Shanto Travel Songgi',
-  description: 'A travels lovers community developed by DevMFarhad',
+  title: "Shanto Travel Songgi",
+  description: "A travels lovers community developed by DevMFarhad",
 };
 
 export default function RootLayout({

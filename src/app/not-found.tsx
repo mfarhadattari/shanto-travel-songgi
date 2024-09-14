@@ -1,28 +1,28 @@
-'use client';
+"use client";
 
-import { Box, Button, Stack, Typography } from '@mui/material';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import HomeIcon from '@mui/icons-material/Home';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Box, Button, Stack, Typography } from "@mui/material";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import HomeIcon from "@mui/icons-material/Home";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const NotFoundPage = () => {
   const router = useRouter();
   return (
     <Box
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
       }}
     >
       <Typography
         variant="h1"
         style={{
-          fontWeight: 'bold',
+          fontWeight: "bold",
         }}
       >
         404
@@ -38,7 +38,7 @@ const NotFoundPage = () => {
             router.back();
           }}
           style={{
-            backgroundColor: 'ffffff',
+            backgroundColor: "#ffffff",
           }}
           startIcon={<ArrowBackIcon />}
         >
