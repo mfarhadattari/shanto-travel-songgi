@@ -1,9 +1,9 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Logo from "../Logo/Logo";
 import Link from "next/link";
-import { ReactNode } from "react";
 import Image from "next/image";
 import assets from "@/assets";
+import Copyright from "./Copyright";
 
 const Footer = () => {
   return (
@@ -78,7 +78,7 @@ const Footer = () => {
               color: "#FFFFFF",
             }}
           >
-            Find you travel partner
+            Find you travel friends
           </Typography>
         </Box>
         {/* ----------- Social ------------- */}
@@ -89,7 +89,7 @@ const Footer = () => {
           spacing={2}
           mt={3}
         >
-          <Link href="https//www.facebook.com" target="_blank">
+          <Link href="https://www.facebook.com/" target="blank">
             <Image
               src={assets.facebookIcon}
               alt="Facebook"
@@ -123,10 +123,7 @@ const Footer = () => {
           </Link>
         </Stack>
 
-        <Typography variant="body2" textAlign="center" color="#FFFFFF" mt={2}>
-          &copy; {new Date().getFullYear() as ReactNode} All rights reserved by
-          ST Songgi.
-        </Typography>
+        <Copyright />
       </Container>
     </Box>
   );

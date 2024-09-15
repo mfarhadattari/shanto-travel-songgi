@@ -1,21 +1,12 @@
-import config from "@/config";
-import { Box, Button } from "@mui/material";
+import { Container } from "@mui/material";
+import Hero from "./../../components/UI/home/Hero/Hero";
 
-export default async function Home() {
+const Home = () => {
   return (
-    <Box
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "20px",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        textTransform: "uppercase",
-      }}
-    >
-      <h1>Welcome to {config.app_name}</h1>
-      <Button>Get Started</Button>
-    </Box>
+    <Container>
+      <Hero />
+    </Container>
   );
-}
+};
+
+export default Home;

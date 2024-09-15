@@ -5,7 +5,13 @@ import Logo from "../Logo/Logo";
 
 const Navbar = () => {
   return (
-    <Box bgcolor="secondary.main">
+    <Box
+      bgcolor="secondary.main"
+      height={350}
+      style={{
+        width: "100%",
+      }}
+    >
       <Container>
         <Stack
           direction="row"

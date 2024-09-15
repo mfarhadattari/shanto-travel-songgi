@@ -7,7 +7,15 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
     <Box>
       <Navbar />
-      {children}
+      <Box
+        style={{
+          position: "relative",
+          top: "-280px",
+        }}
+      >
+        {children}
+      </Box>
+
       <Footer />
     </Box>
   );
