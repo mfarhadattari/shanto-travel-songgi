@@ -28,6 +28,7 @@ const TripCard = ({ trip }: { trip: TProps }) => {
         backgroundColor: "secondary.main",
         boxShadow: "none",
         padding: "16px",
+        borderRadius: "24px",
       }}
     >
       <Image

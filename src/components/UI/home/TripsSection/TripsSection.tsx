@@ -1,5 +1,5 @@
 import config from "@/config";
-import { Box, Container, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import TripCard from "./TripCard";
 
@@ -14,7 +14,7 @@ const TripsSection = async () => {
   const trips = data.data || [];
 
   return (
-    <Container
+    <Box
       style={{
         position: "relative",
         top: "-30px",
@@ -51,7 +51,7 @@ const TripsSection = async () => {
           </Grid>
         ))}
       </Grid>
-    </Container>
+    </Box>
   );
 };
 
