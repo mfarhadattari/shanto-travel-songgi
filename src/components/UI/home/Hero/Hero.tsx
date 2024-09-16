@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <Box
       height={400}
-      my={6}
+      mt={6}
       sx={{
         backgroundColor: "secondary.dark",
         borderRadius: "24px",
