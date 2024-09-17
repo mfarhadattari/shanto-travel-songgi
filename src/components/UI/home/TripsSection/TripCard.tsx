@@ -11,17 +11,13 @@ import {
   Box,
 } from "@mui/material";
 import dayjs from "dayjs";
+import { TResTrip } from "@/types";
 
 type TProps = {
-  id: string;
-  destination: string;
-  photos: string[];
-  description: string;
-  startDate: Date;
-  endDate: Date;
+  trip: TResTrip;
 };
 
-const TripCard = ({ trip }: { trip: TProps }) => {
+const TripCard = ({ trip }: TProps) => {
   return (
     <Card
       sx={{
