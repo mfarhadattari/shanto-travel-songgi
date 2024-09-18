@@ -1,6 +1,14 @@
 "use client";
 
-import { Box } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid2 as Grid,
+  Rating,
+  Stack,
+  // TextField,
+  Typography,
+} from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 import ReviewCard from "./ReviewCard";
@@ -8,6 +16,10 @@ import ReviewCard from "./ReviewCard";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
+import Image from "next/image";
+import assets from "@/assets";
+import { useState } from "react";
+import { TextareaAutosize } from "@mui/base";
 
 const reviews = [
   {
@@ -63,10 +75,11 @@ const reviews = [
 ];
 
 const ReviewsSection = () => {
+  const [value, setValue] = useState<number | null>(2);
   return (
     <Box
       style={{
-        margin: "120px 0",
+        marginTop: "120px",
       }}
     >
       <Swiper
@@ -91,6 +104,80 @@ const ReviewsSection = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <Grid container mt={10} justifyContent="center" alignItems="center">
+        <Grid
+          size={{
+            sm: 12,
+            md: 6,
+          }}
+        >
+          <Image src={assets.reviewUI} alt="Review" />
+        </Grid>
+        <Grid
+          size={{
+            sm: 12,
+            md: 6,
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: "secondary.main",
+              padding: "24px",
+              borderRadius: "16px",
+              width: "75%",
+              margin: "0 auto",
+            }}
+          >
+            <Typography
+              variant="h5"
+              component="h5"
+              style={{
+                textTransform: "uppercase",
+              }}
+            >
+              Review Us
+            </Typography>
+            <Stack
+              sx={{
+                marginTop: 2,
+              }}
+              spacing={2}
+            >
+              <Box>
+                <Typography component="legend">Rating: </Typography>
+                <Rating
+                  name="Raring"
+                  value={value}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                  sx={{
+                    marginTop: 1,
+                    fontSize: "30px",
+                  }}
+                />
+              </Box>
+              <Box>
+                <Typography component="legend">Comments: </Typography>
+                <TextareaAutosize
+                  style={{
+                    marginTop: 1,
+                    width: "100%",
+                    borderRadius: "8px",
+                    padding: "10px",
+                    resize: "none",
+                    fontSize: "16px",
+                  }}
+                  minRows={3}
+                  maxRows={5}
+                />
+              </Box>
+              <Button>Submit</Button>
+            </Stack>
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };

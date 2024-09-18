@@ -5,6 +5,7 @@ const assets = {
   twitterIcon: require("./landing_page/twitter.png"),
   defaultTripsPic: require("./landing_page/default_trips_pic.jpg"),
   faq: require("./landing_page/faq.webp"),
+  reviewUI: require("./landing_page/reviewui.svg"),
 };
 
 export default assets;
