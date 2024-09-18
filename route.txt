@@ -1,0 +1,28 @@
+1. Main Layout
+    => Landing Page : '/'
+    => About Page : '/about'
+    => Trips Page : '/trips'
+    => Trips Details : '/trips/:tridId'
+    => Join Trip: '/trips/:tridId/join
+
+3. Without Layout
+    => Register Page : '/register'
+    => Login Page : '/login'
+    => Forget Password : '/forget-password'
+    => Reset Password : '/reset-password'
+
+2. User dashboard
+    => User Home : '/dashboard'
+    => Post Trip : '/dashboard/post-trip'
+    => Posted Trips : '/dashboard/posted-trips'
+    => Edit Trip : '/dashboard/posted-trips/:tridId/edit'
+    => Trip Requests : '/dashboard/posted-trips/:tridId/requests'
+    => Joined Trips : '/dashboard/joined-trips/
+    => Profile : '/dashboard/profile'
+    => Change Password : '/dashboard/change-password'
+
+3. Admin dashboard
+    => Admin Home : '/dashboard/admin'
+    => User Management : '/dashboard/admin/users'
+    => Trip Management : '/dashboard/admin/trips'
+    => Review Management : '/dashboard/admin/reviews'

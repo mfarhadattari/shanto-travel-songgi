@@ -4,7 +4,7 @@ import TripsSection from "@/components/UI/home/TripsSection/TripsSection";
 import FAQSection from "@/components/UI/home/FAQSection/FAQSection";
 import ReviewsSection from "@/components/UI/home/ReviewSection/ReviewSection";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <Container>
       <Hero />
@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

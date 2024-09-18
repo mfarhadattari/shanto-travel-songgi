@@ -26,7 +26,7 @@ const Navbar = () => {
           <Stack direction="row" alignItems="center" spacing={4}>
             <Typography
               component={Link}
-              href="/travels"
+              href="/trips"
               color="text.secondary"
               style={{
                 fontSize: "16px",
@@ -34,7 +34,7 @@ const Navbar = () => {
                 textTransform: "uppercase",
               }}
             >
-              Travels
+              Trips
             </Typography>
             <Typography
               component={Link}
