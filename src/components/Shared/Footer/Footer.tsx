@@ -1,9 +1,8 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Logo from "../Logo/Logo";
 import Link from "next/link";
-import Image from "next/image";
-import assets from "@/assets";
 import Copyright from "./Copyright";
+import Social from "../Social/Social";
 
 const Footer = () => {
   return (
@@ -81,48 +80,7 @@ const Footer = () => {
             Find you travel friends
           </Typography>
         </Box>
-        {/* ----------- Social ------------- */}
-        <Stack
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          spacing={2}
-          mt={3}
-        >
-          <Link href="https://www.facebook.com/" target="blank">
-            <Image
-              src={assets.facebookIcon}
-              alt="Facebook"
-              height={30}
-              width={30}
-            />
-          </Link>
-          <Link href="https//www.linkedin.com" target="_blank">
-            <Image
-              src={assets.linkedinIcon}
-              alt="linkedin"
-              height={30}
-              width={30}
-            />
-          </Link>
-          <Link href="https//www.instagram.com" target="_blank">
-            <Image
-              src={assets.instagramIcon}
-              alt="instagram"
-              height={30}
-              width={30}
-            />
-          </Link>
-          <Link href="https//www.twitter.com" target="_blank">
-            <Image
-              src={assets.twitterIcon}
-              alt="Twitter"
-              height={30}
-              width={30}
-            />
-          </Link>
-        </Stack>
-
+        <Social />
         <Copyright />
       </Container>
     </Box>

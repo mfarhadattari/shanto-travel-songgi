@@ -7,7 +7,8 @@ const OurMission = () => {
   return (
     <Box
       sx={{
-        marginTop: "50px",
+        marginTop: 10,
+        marginBottom: 0,
       }}
     >
       <Grid container spacing={3}>

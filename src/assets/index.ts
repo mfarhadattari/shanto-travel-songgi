@@ -6,8 +6,8 @@ const assets = {
   defaultTripsPic: require("./landing_page/default_trips_pic.jpg"),
   faq: require("./landing_page/faq.webp"),
   reviewUI: require("./landing_page/reviewui.svg"),
-  teamImage: require("./about/team.jpg"),
   travelImage: require("./about/travel.jpg"),
+  contactImage: require("./about/contact.svg"),
 };
 
 export default assets;

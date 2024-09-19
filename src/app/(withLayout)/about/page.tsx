@@ -1,3 +1,4 @@
+import ContactUs from "@/components/UI/about/ContactUs/ContactUs";
 import OurMission from "@/components/UI/about/OurMission/OurMission";
 import OurTeam from "@/components/UI/about/OurTeam/OurTeam";
 import WhyUs from "@/components/UI/about/WhyUs/WhyUs";
@@ -9,6 +10,7 @@ const AboutPage = () => {
       <OurMission />
       <WhyUs />
       <OurTeam />
+      <ContactUs />
     </Container>
   );
 };

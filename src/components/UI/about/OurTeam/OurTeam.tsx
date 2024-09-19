@@ -52,7 +52,12 @@ const teamMembers: TTeamMember[] = [
 
 const OurTeam = () => {
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box
+      sx={{
+        marginTop: 10,
+        marginBottom: 0,
+      }}
+    >
       <SectionHeader
         title="Meet Our Team"
         subtitle="Meet the Team Behind Your Next Adventure!"
