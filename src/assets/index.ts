@@ -8,6 +8,7 @@ const assets = {
   reviewUI: require("./landing_page/reviewui.svg"),
   travelImage: require("./about/travel.jpg"),
   contactImage: require("./about/contact.svg"),
+  loginRegisterImage: require("./images/login-register.svg"),
 };
 
 export default assets;
