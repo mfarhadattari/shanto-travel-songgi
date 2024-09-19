@@ -32,6 +32,8 @@ const SectionHeader = ({ title, subtitle }: TProps) => {
             textTransform: "capitalize",
             color: "text.secondary",
             fontSize: "18px",
+            width: "50%",
+            margin: "0 auto",
           }}
           variant="body1"
           component="p"
