@@ -12,7 +12,6 @@ import NaturePeopleIcon from "@mui/icons-material/NaturePeople";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import SectionHeader from "@/components/Shared/SectionHeader/SectionHeader";
 import LanguageIcon from "@mui/icons-material/Language";
-import { ReactNode } from "react";
 
 const reasons = [
   {
@@ -115,6 +114,7 @@ const WhyUs = () => {
                 textAlign: "center",
                 height: "100%",
                 borderRadius: "8px",
+                backgroundColor: "secondary.main",
               }}
             >
               <Icon sx={{ mb: 2 }} fontSize="large">
@@ -123,9 +123,7 @@ const WhyUs = () => {
               <Typography variant="h6" gutterBottom>
                 {reason.title}
               </Typography>
-              <Typography variant="body2" color="textSecondary">
-                {reason.description}
-              </Typography>
+              <Typography variant="body1">{reason.description}</Typography>
             </Paper>
           </Grid>
         ))}
