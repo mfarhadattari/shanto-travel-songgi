@@ -1,8 +1,11 @@
+import OurMission from "@/components/UI/about/OurMission/OurMission";
+import { Container } from "@mui/material";
+
 const AboutPage = () => {
   return (
-    <div>
-      <h1>About Page</h1>
-    </div>
+    <Container>
+      <OurMission />
+    </Container>
   );
 };
 
