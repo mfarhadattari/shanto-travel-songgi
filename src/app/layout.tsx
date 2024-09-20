@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "@/libs/providers/Providers";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, Zoom } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Shanto Travel Songgi",
@@ -15,7 +17,22 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body>{children}</body>
+        <body>
+          {children}
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            transition={Zoom}
+            limit={1}
+          />
+        </body>
       </html>
     </Providers>
   );

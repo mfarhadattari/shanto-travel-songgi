@@ -1,5 +1,4 @@
 "use client";
-
 import { store } from "@/redux/store";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import { ReactNode } from "react";

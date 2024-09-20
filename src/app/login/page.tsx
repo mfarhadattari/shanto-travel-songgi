@@ -1,18 +1,36 @@
-import {
-  Box,
-  Button,
-  Stack,
-  Container,
-  Grid2 as Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+"use client";
+
+import { Box, Button, Stack, Grid2 as Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Image from "next/image";
 import assets from "@/assets";
+import STInput from "@/components/Form/STInput";
+import STForm from "@/components/Form/STForm";
+import { FieldValues } from "react-hook-form";
+import loginUser from "@/services/actions/loginUser";
+import { toast } from "react-toastify";
+
+const userLoginDefaultValue = { email: "", password: "" };
 
 const LoginPage = () => {
+  const onSubmit = async (data: FieldValues) => {
+    console.log(data);
+    try {
+      const result = await loginUser(data);
+      if (result.success) {
+        toast.success(result.message);
+
+        // save token in local storage
+      } else {
+        toast.error(result.message || "Something went wrong");
+      }
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -61,39 +79,21 @@ const LoginPage = () => {
             </Typography>
 
             {/* Login Form */}
-            <Box>
+            <STForm formSubmit={onSubmit} defaultValues={userLoginDefaultValue}>
               <Grid container sx={{ mt: 1 }}>
                 <Grid
                   size={{
                     xs: 12,
                   }}
                 >
-                  <TextField
-                    fullWidth
-                    label="Email Address"
-                    autoComplete="email"
-                    variant="outlined"
-                    sx={{
-                      backgroundColor: "secondary.main",
-                      mb: 2,
-                    }}
-                  />
+                  <STInput name="email" label="Email" />
                 </Grid>
                 <Grid
                   size={{
                     xs: 12,
                   }}
                 >
-                  <TextField
-                    fullWidth
-                    label="Password"
-                    type="password"
-                    autoComplete="current-password"
-                    sx={{
-                      backgroundColor: "secondary.main",
-                      mb: 2,
-                    }}
-                  />
+                  <STInput name="password" label="Password" />
                 </Grid>
               </Grid>
               <Stack spacing={2} mt={2}>
@@ -131,7 +131,7 @@ const LoginPage = () => {
                   </Link>
                 </Box>
               </Stack>
-            </Box>
+            </STForm>
           </Box>
         </Grid>
       </Grid>
