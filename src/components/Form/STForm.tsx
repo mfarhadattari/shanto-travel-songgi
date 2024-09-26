@@ -1,5 +1,6 @@
 "use client";
 import { CSSProperties, ReactNode } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import {
   FieldValues,
   FormProvider,
@@ -9,20 +10,31 @@ import {
 
 type TFormConfig = {
   defaultValues?: Record<string, unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  resolver?: any;
 };
 
 type TSTForm = {
   formSubmit: SubmitHandler<FieldValues>;
   children: ReactNode;
-  defaultValues?: FieldValues;
   style?: CSSProperties;
 } & TFormConfig;
 
-const STForm = ({ formSubmit, children, defaultValues, style }: TSTForm) => {
+const STForm = ({
+  formSubmit,
+  children,
+  defaultValues,
+  style,
+  resolver,
+}: TSTForm) => {
   const formConfig: TFormConfig = {};
 
   if (defaultValues) {
     formConfig["defaultValues"] = defaultValues;
+  }
+
+  if (resolver) {
+    formConfig["resolver"] = zodResolver(resolver);
   }
 
   const methods = useForm(formConfig);

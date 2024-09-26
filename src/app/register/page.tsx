@@ -15,14 +15,8 @@ import registerUser from "@/services/actions/registerUser";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import STBackdrop from "@/components/Shared/STBackdrop/STBackdrop";
-
-const userRegisterDefaultValue = {
-  username: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-  file: "",
-};
+import { AuthSchema } from "./../../const/formValidationSchema/AuthSchema";
+import { AuthDefaultValue } from "./../../const/formDefaultValue/AuthDefaultValue";
 
 const RegisterPage = () => {
   const router = useRouter();
@@ -106,7 +100,8 @@ const RegisterPage = () => {
             {/* -----------> Register Form <---------- */}
             <STForm
               formSubmit={onSubmit}
-              defaultValues={userRegisterDefaultValue}
+              defaultValues={AuthDefaultValue.userRegisterDefaultValue}
+              resolver={AuthSchema.userRegisterSchema}
               style={{
                 width: "100%",
               }}

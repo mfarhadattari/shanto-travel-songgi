@@ -12,32 +12,36 @@ import loginUser from "@/services/actions/loginUser";
 import { toast } from "react-toastify";
 import { storeUserInfo } from "@/services/authServices";
 import { useRouter } from "next/navigation";
-
-const userLoginDefaultValue = { email: "", password: "" };
+import { useState } from "react";
+import STBackdrop from "@/components/Shared/STBackdrop/STBackdrop";
+import { AuthDefaultValue } from "./../../const/formDefaultValue/AuthDefaultValue";
+import { AuthSchema } from "./../../const/formValidationSchema/AuthSchema";
 
 const LoginPage = () => {
   const router = useRouter();
   const navigateURL = "/";
 
+  const [loading, setLoading] = useState<boolean>(false);
+
   const onSubmit = async (data: FieldValues) => {
+    setLoading(true);
     try {
       const result = await loginUser(data);
       if (result.success) {
         toast.success(result.message);
-
         // save token in local storage
         const token = result.data.accessToken;
         storeUserInfo(token);
-
         // navigate
         router.push(navigateURL);
       } else {
         toast.error(result.message || "Something went wrong");
+        console.log(result);
       }
-      console.log(result);
     } catch (err) {
       console.log(err);
     }
+    setLoading(false);
   };
 
   return (
@@ -88,7 +92,11 @@ const LoginPage = () => {
             </Typography>
 
             {/* Login Form */}
-            <STForm formSubmit={onSubmit} defaultValues={userLoginDefaultValue}>
+            <STForm
+              formSubmit={onSubmit}
+              defaultValues={AuthDefaultValue.userLoginDefaultValue}
+              resolver={AuthSchema.userLoginSchema}
+            >
               <Grid container sx={{ mt: 1 }}>
                 <Grid
                   size={{
@@ -144,6 +152,7 @@ const LoginPage = () => {
           </Box>
         </Grid>
       </Grid>
+      <STBackdrop open={loading} />
     </Box>
   );
 };

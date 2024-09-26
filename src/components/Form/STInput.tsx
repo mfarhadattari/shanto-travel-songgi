@@ -33,9 +33,15 @@ const STInput = ({
           placeholder={label}
           autoComplete="none"
           sx={{
-            backgroundColor: "secondary.main",
             mb: 2,
             ...sx,
+          }}
+          slotProps={{
+            input: {
+              sx: {
+                backgroundColor: "secondary.main",
+              },
+            },
           }}
           error={!!error?.message}
           helperText={error?.message}

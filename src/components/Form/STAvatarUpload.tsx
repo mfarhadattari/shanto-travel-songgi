@@ -51,8 +51,8 @@ const STAvatarUpload = ({ name, sx }: TSTAvatarUpload) => {
             value={value?.fileName}
             onChange={(e) => {
               setAvatar(
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 URL.createObjectURL(
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   (e.target as HTMLInputElement)?.files?.[0] as any,
                 ),
               );
