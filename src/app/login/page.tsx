@@ -10,18 +10,27 @@ import STForm from "@/components/Form/STForm";
 import { FieldValues } from "react-hook-form";
 import loginUser from "@/services/actions/loginUser";
 import { toast } from "react-toastify";
+import { storeUserInfo } from "@/services/authServices";
+import { useRouter } from "next/navigation";
 
 const userLoginDefaultValue = { email: "", password: "" };
 
 const LoginPage = () => {
+  const router = useRouter();
+  const navigateURL = "/";
+
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
     try {
       const result = await loginUser(data);
       if (result.success) {
         toast.success(result.message);
 
         // save token in local storage
+        const token = result.data.accessToken;
+        storeUserInfo(token);
+
+        // navigate
+        router.push(navigateURL);
       } else {
         toast.error(result.message || "Something went wrong");
       }

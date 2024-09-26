@@ -31,6 +31,7 @@ const STInput = ({
           label={label}
           type={type}
           placeholder={label}
+          autoComplete="none"
           sx={{
             backgroundColor: "secondary.main",
             mb: 2,

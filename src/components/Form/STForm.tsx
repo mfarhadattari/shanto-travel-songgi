@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import {
   FieldValues,
   FormProvider,
@@ -15,9 +15,10 @@ type TSTForm = {
   formSubmit: SubmitHandler<FieldValues>;
   children: ReactNode;
   defaultValues?: FieldValues;
+  style?: CSSProperties;
 } & TFormConfig;
 
-const STForm = ({ formSubmit, children, defaultValues }: TSTForm) => {
+const STForm = ({ formSubmit, children, defaultValues, style }: TSTForm) => {
   const formConfig: TFormConfig = {};
 
   if (defaultValues) {
@@ -26,15 +27,18 @@ const STForm = ({ formSubmit, children, defaultValues }: TSTForm) => {
 
   const methods = useForm(formConfig);
 
-  const { handleSubmit } = methods;
+  const { handleSubmit, reset } = methods;
 
-  const submitHandler: SubmitHandler<FieldValues> = (data) => {
-    formSubmit(data);
+  const submitHandler: SubmitHandler<FieldValues> = async (data) => {
+    await formSubmit(data);
+    reset();
   };
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(submitHandler)}>{children}</form>
+      <form onSubmit={handleSubmit(submitHandler)} style={{ ...style }}>
+        {children}
+      </form>
     </FormProvider>
   );
 };
