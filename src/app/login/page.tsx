@@ -103,14 +103,14 @@ const LoginPage = () => {
                     xs: 12,
                   }}
                 >
-                  <STInput name="email" label="Email" />
+                  <STInput name="email" label="Email" type="email" />
                 </Grid>
                 <Grid
                   size={{
                     xs: 12,
                   }}
                 >
-                  <STInput name="password" label="Password" />
+                  <STInput name="password" label="Password" type="password" />
                 </Grid>
               </Grid>
               <Stack spacing={2} mt={2}>

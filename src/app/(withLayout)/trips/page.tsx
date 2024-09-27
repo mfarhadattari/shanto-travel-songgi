@@ -1,8 +1,11 @@
+import TripsBanner from "@/components/UI/trips/TripsBanner/TripsBanner";
+import { Container } from "@mui/material";
+
 const TripsPage = () => {
   return (
-    <div>
-      <h1>Trips Page</h1>
-    </div>
+    <Container>
+      <TripsBanner />
+    </Container>
   );
 };
 
