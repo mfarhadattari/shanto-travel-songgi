@@ -11,7 +11,12 @@ const userLoginDefaultValue = {
   password: "",
 };
 
+const forgetPasswordDefaultValue = {
+  email: "",
+};
+
 export const AuthDefaultValue = {
   userRegisterDefaultValue,
   userLoginDefaultValue,
+  forgetPasswordDefaultValue,
 };

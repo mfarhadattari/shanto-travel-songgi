@@ -26,4 +26,12 @@ const userLoginSchema = z.object({
     .min(6, { message: "Password must be at least 6 characters." }),
 });
 
-export const AuthSchema = { userRegisterSchema, userLoginSchema };
+const forgetPasswordSchema = z.object({
+  email: z.string().email({ message: "Please provide valid email." }),
+});
+
+export const AuthSchema = {
+  userRegisterSchema,
+  userLoginSchema,
+  forgetPasswordSchema,
+};
